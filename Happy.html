@@ -1,0 +1,314 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday, Bestie! 🎂💖</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1, #f0e6ff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 20px;
+            padding: 30px;
+
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+
+            max-width: 500px;
+            width: 90%;
+
+            text-align: center;
+
+            border: 3px solid #ff85a2;
+
+            position: relative;
+            z-index: 10;
+
+            animation: cardAppear 1s ease;
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .cake {
+            font-size: 50px;
+            margin: 10px 0 20px;
+            animation: bounce 2s infinite;
+        }
+
+        h1 {
+            color: #ff477e;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        p {
+            color: #6c757d;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Terminal */
+        .terminal {
+            background-color: #23272a;
+            color: #f47fff;
+
+            border-radius: 10px;
+            padding: 15px;
+
+            text-align: left;
+
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+
+            box-shadow: inset 0 0 10px #000;
+
+            margin-bottom: 20px;
+
+            overflow-x: auto;
+        }
+
+        .terminal .blue {
+            color: #85e3ff;
+        }
+
+        .terminal .yellow {
+            color: #ffe66d;
+        }
+
+        /* Button */
+        button {
+            background: linear-gradient(45deg, #ff758f, #ff85a2);
+
+            color: white;
+            border: none;
+
+            padding: 12px 25px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            border-radius: 25px;
+
+            cursor: pointer;
+
+            box-shadow: 0 5px 15px rgba(255, 117, 143, 0.4);
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+
+            background: linear-gradient(
+                45deg,
+                #ff85a2,
+                #ff758f
+            );
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Cake animation */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+
+            color: #ff477e;
+
+            font-size: 20px;
+
+            animation: floatUp 4s linear forwards;
+
+            opacity: 0;
+
+            bottom: -30px;
+
+            pointer-events: none;
+
+            z-index: 5;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(-100vh)
+                    scale(1.5)
+                    rotate(25deg);
+
+                opacity: 0;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 500px) {
+
+            .card {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .terminal {
+                font-size: 12px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="cake">
+            🎂✨🌸
+        </div>
+
+        <h1>
+            Happy Birthday, Beautiful! 💖
+        </h1>
+
+<!-- Lovely message for Princy -->
+<div class="birthday-message">
+    <div class="divider">♡ ─── ✦ ─── ♡</div>
+
+    <p class="quote">
+        Dear <span>Princy</span>, 💖
+        <br><br>
+        Some people make life brighter simply by being themselves.
+        You are one of those rare souls who turn ordinary moments
+        into beautiful memories. 🌸
+        <br><br>
+        May your smile always stay this bright,
+        your dreams always stay this big,
+        and your heart always stay this beautiful.
+        ✨
+        <br><br>
+        <strong>Happy Birthday, Princy! 💕🌷✨</strong>
+    </p>
+
+    <div class="divider">♡ ─── ✦ ─── ♡</div>
+</div>
+
+
+
+        <p>
+            Wishing you a year full of endless laughter, success, and beautiful memories.
+            You code your own destiny, girl! ✨💖
+        </p>
+
+        <button onclick="createHearts()">
+            Click for Magic ✨
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function createHearts() {
+
+            const emojis = [
+                '💖',
+                '🌸',
+                '✨',
+                '💝',
+                '💕',
+                '🎀',
+                '🌷'
+            ];
+
+            for (let i = 0; i < 20; i++) {
+
+                setTimeout(() => {
+
+                    const heart = document.createElement('div');
+
+                    heart.classList.add('heart');
+
+                    heart.innerHTML =
+                        emojis[
+                            Math.floor(
+                                Math.random() * emojis.length
+                            )
+                        ];
+
+                    heart.style.left =
+                        Math.random() * 100 + 'vw';
+
+                    heart.style.fontSize =
+                        (Math.random() * 20 + 15) + 'px';
+
+                    heart.style.animationDuration =
+                        (Math.random() * 2 + 3) + 's';
+
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 5000);
+
+                }, i * 150);
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+```
